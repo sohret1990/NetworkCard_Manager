@@ -66,7 +66,8 @@ namespace NetworkCard_Manager
                 DisableAdapter(adapter.Name);
 
         }
-        static void EnableAdapter(string interfaceName)
+
+        void EnableAdapter(string interfaceName)
         {
             ProcessStartInfo psi = new ProcessStartInfo("netsh", "interface set interface \"" + interfaceName + "\" enable");
             Process p = new Process();
@@ -74,7 +75,7 @@ namespace NetworkCard_Manager
             p.Start();
         }
 
-        static void DisableAdapter(string interfaceName)
+        void DisableAdapter(string interfaceName)
         {
             ProcessStartInfo psi = new ProcessStartInfo("netsh", "interface set interface \"" + interfaceName + "\" disable");
             Process p = new Process();
